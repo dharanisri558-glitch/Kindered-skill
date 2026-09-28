@@ -1,0 +1,7 @@
+{
+  "name": "KindredSkill - Local Skill Swapping Platform",
+  "description": "Connect with local neighbors to exchange knowledge and practical skills without financial cost. Manage your skills, schedule swap sessions, chat in real-time, and build community trust.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
