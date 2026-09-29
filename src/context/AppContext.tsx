@@ -78,6 +78,8 @@ interface AppContextType {
   isUserSwitcherOpen: boolean;
   setIsUserSwitcherOpen: (open: boolean) => void;
   registerNewUser: (name: string, email: string, neighborhood: string, bio: string) => void;
+  isAiChatOpen: boolean;
+  setIsAiChatOpen: (open: boolean) => void;
 }
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
@@ -153,6 +155,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   const [proposeSwapPartner, setProposeSwapPartner] = useState<UserProfile | null>(null);
   const [reviewingAppointment, setReviewingAppointment] = useState<SwapAppointment | null>(null);
   const [isUserSwitcherOpen, setIsUserSwitcherOpen] = useState(false);
+  const [isAiChatOpen, setIsAiChatOpen] = useState(false);
 
   // Sync state to localStorage
   useEffect(() => {
@@ -639,7 +642,9 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         setReviewingAppointment,
         isUserSwitcherOpen,
         setIsUserSwitcherOpen,
-        registerNewUser
+        registerNewUser,
+        isAiChatOpen,
+        setIsAiChatOpen
       }}
     >
       {children}

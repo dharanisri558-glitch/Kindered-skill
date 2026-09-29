@@ -14,6 +14,7 @@ import { ProfileView } from './components/ProfileView';
 import { ProposeSwapModal } from './components/ProposeSwapModal';
 import { LeaveReviewModal } from './components/LeaveReviewModal';
 import { UserSwitcherModal } from './components/UserSwitcherModal';
+import { N8nChatWidget } from './components/N8nChatWidget';
 import { Heart, Sparkles, ShieldCheck } from 'lucide-react';
 
 const MainLayout: React.FC = () => {
@@ -33,10 +34,11 @@ const MainLayout: React.FC = () => {
         {activeTab === 'profile' && <ProfileView />}
       </main>
 
-      {/* Modals */}
+      {/* Modals & AI Chat Assistant */}
       <ProposeSwapModal />
       <LeaveReviewModal />
       <UserSwitcherModal />
+      <N8nChatWidget />
 
       {/* Subtle, Clean Footer */}
       <footer className="mt-auto border-t border-slate-200/80 bg-white py-8 text-xs text-slate-500">

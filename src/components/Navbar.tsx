@@ -8,7 +8,8 @@ export const Navbar: React.FC = () => {
     setActiveTab, 
     currentUser, 
     setIsUserSwitcherOpen,
-    conversations
+    conversations,
+    setIsAiChatOpen
   } = useApp();
 
   const totalUnread = conversations.reduce((acc, c) => acc + (c.unreadCount || 0), 0);
@@ -104,6 +105,15 @@ export const Navbar: React.FC = () => {
           {/* Zone 3: 1-2 primary actions */}
           <div className="flex items-center gap-2 sm:gap-3">
             <button
+              onClick={() => setIsAiChatOpen(true)}
+              className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-emerald-800 bg-emerald-50 hover:bg-emerald-100 rounded-lg transition-colors border border-emerald-200"
+              title="Chat with KindredSkill n8n AI Assistant"
+            >
+              <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
+              <span className="hidden sm:inline">AI Guide</span>
+            </button>
+
+            <button
               onClick={() => setIsUserSwitcherOpen(true)}
               className="flex items-center gap-2 px-3 py-1.5 text-xs font-medium text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg transition-colors border border-slate-200/80"
               title="Switch user or register new member"
@@ -149,11 +159,11 @@ export const Navbar: React.FC = () => {
           <span>Find</span>
         </button>
         <button
-          onClick={() => setActiveTab('my-skills')}
-          className={`flex flex-col items-center py-1 px-2 rounded ${activeTab === 'my-skills' ? 'text-emerald-700 font-bold' : 'text-slate-500'}`}
+          onClick={() => setIsAiChatOpen(true)}
+          className="flex flex-col items-center py-1 px-2 rounded text-emerald-700 font-medium"
         >
-          <Sparkles className="w-4 h-4" />
-          <span>Skills</span>
+          <Sparkles className="w-4 h-4 text-emerald-600" />
+          <span>AI Guide</span>
         </button>
         <button
           onClick={() => setActiveTab('messages')}

@@ -26,7 +26,8 @@ export const DashboardView: React.FC = () => {
     setReviewingAppointment, 
     setActiveTab, 
     getOrCreateConversation,
-    setInspectingUserId
+    setInspectingUserId,
+    setIsAiChatOpen
   } = useApp();
 
   const userAppointments = appointments.filter(
@@ -89,6 +90,14 @@ export const DashboardView: React.FC = () => {
               >
                 <Plus className="w-4 h-4" />
                 <span>List a Skill I Offer</span>
+              </button>
+
+              <button
+                onClick={() => setIsAiChatOpen(true)}
+                className="px-5 py-2.5 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 text-sm font-semibold rounded-xl border border-emerald-200 transition-all flex items-center gap-2"
+              >
+                <Sparkles className="w-4 h-4 text-emerald-600" />
+                <span>Ask AI Guide</span>
               </button>
             </div>
 
